@@ -1,0 +1,64 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "name": "张三 / Zhang San",
+      "email": "zhangsan@example.com",
+      "avatar": "person.circle.fill",
+      "status": "online"
+    },
+    {
+      "id": "2",
+      "name": "李四 / Li Si",
+      "email": "lisi@example.com",
+      "avatar": "person.circle.fill",
+      "status": "offline"
+    },
+    {
+      "id": "3",
+      "name": "王五 / Wang Wu",
+      "email": "wangwu@example.com",
+      "avatar": "person.circle.fill",
+      "status": "online"
+    }
+  ],
+  "products": [
+    {
+      "id": "p1",
+      "title": "iPhone 15 Pro",
+      "description": "最新款苹果手机 / Latest iPhone model",
+      "price": 8999,
+      "category": "electronics"
+    },
+    {
+      "id": "p2",
+      "title": "MacBook Pro",
+      "description": "专业笔记本电脑 / Professional laptop",
+      "price": 15999,
+      "category": "electronics"
+    },
+    {
+      "id": "p3",
+      "title": "AirPods Pro",
+      "description": "无线降噪耳机 / Wireless noise-canceling earphones",
+      "price": 1999,
+      "category": "accessories"
+    }
+  ],
+  "articles": [
+    {
+      "id": "a1",
+      "title": "SwiftUI 最佳实践 / SwiftUI Best Practices",
+      "content": "学习如何构建高质量的SwiftUI应用 / Learn how to build high-quality SwiftUI apps",
+      "author": "技术团队 / Tech Team",
+      "date": "2024-01-15"
+    },
+    {
+      "id": "a2",
+      "title": "TCA架构详解 / TCA Architecture Explained",
+      "content": "深入理解Composable Architecture模式 / Deep dive into Composable Architecture pattern",
+      "author": "架构师 / Architect",
+      "date": "2024-01-20"
+    }
+  ]
+}

@@ -1,0 +1,98 @@
+# Xcode Build Files / Xcode 构建文件
+build/
+DerivedData/
+*.xcodeproj/xcuserdata/
+*.xcodeproj/project.xcworkspace/xcuserdata/
+*.xcodeproj/project.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist
+
+# Build products / 构建产物
+*.app
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+# Swift Package Manager / Swift 包管理器
+.build/
+.swiftpm/
+Package.resolved
+.resolved
+SourcePackages/
+
+# Xcode User Data / Xcode 用户数据
+*.xcuserstate
+*.xcuserdatad/
+*.xcworkspace/xcuserdata/
+*.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist
+
+# OS Files / 操作系统文件
+.DS_Store
+Thumbs.db
+
+# Temporary Files / 临时文件
+*.swp
+*.tmp
+*~
+
+# IDE Files / IDE 文件
+.idea/
+*.iml
+.vscode/
+
+# Test Coverage / 测试覆盖率
+*.xcoverage
+*.profraw
+*.profdata
+
+# Documentation / 文档生成
+docs/generated/
+.jazzy/
+
+# Carthage (if used) / Carthage（如果使用）
+Carthage/Build/
+Carthage/Checkouts/
+
+# CocoaPods (if used) / CocoaPods（如果使用）
+Pods/
+*.xcworkspace
+
+# Fastlane (if used) / Fastlane（如果使用）
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots/**/*.png
+fastlane/test_output
+
+# ModuleCache / 模块缓存
+ModuleCache.noindex/
+Index.noindex/
+Logs/
+SDKStatCaches.noindex/
+
+# XCBuildData / XCode构建数据
+XCBuildData/
+
+# Misc / 其他
+*.moved-aside
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+
+# Swift Playground / Swift Playground
+timeline.xctimeline
+playground.xcworkspace
+
+# Network / 网络相关
+*.orig
+.hg
+.svn
+CVS
+
+# Private Keys / 私钥
+*.pem
+*.p12
+*.key
+*.mobileprovision
