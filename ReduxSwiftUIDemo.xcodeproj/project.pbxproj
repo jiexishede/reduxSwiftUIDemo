@@ -210,7 +210,7 @@
 			mainGroup = 6ABA63712E67B20D00BA75F3;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
-				6AB1C0802E67C38600EE9F88 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
+				6AB1C0802E67C38600EE9F88 /* XCLocalSwiftPackageReference "Libraries/swift-composable-architecture" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 6ABA637B2E67B20D00BA75F3 /* Products */;
@@ -570,21 +570,17 @@
 		};
 /* End XCConfigurationList section */
 
-/* Begin XCRemoteSwiftPackageReference section */
-		6AB1C0802E67C38600EE9F88 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.22.2;
-			};
+/* Begin XCLocalSwiftPackageReference section */
+		6AB1C0802E67C38600EE9F88 /* XCLocalSwiftPackageReference "Libraries/swift-composable-architecture" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = "Libraries/swift-composable-architecture";
 		};
-/* End XCRemoteSwiftPackageReference section */
+/* End XCLocalSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
 		6AB1C0822E67C7C600EE9F88 /* ComposableArchitecture */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 6AB1C0802E67C38600EE9F88 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
+			package = 6AB1C0802E67C38600EE9F88 /* XCLocalSwiftPackageReference "Libraries/swift-composable-architecture" */;
 			productName = ComposableArchitecture;
 		};
 /* End XCSwiftPackageProductDependency section */

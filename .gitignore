@@ -96,3 +96,11 @@ CVS
 *.p12
 *.key
 *.mobileprovision
+
+# Local Dependencies / 本地依赖
+# IMPORTANT: Do not ignore Libraries folder / 重要：不要忽略 Libraries 文件夹
+!Libraries/
+# But ignore build artifacts inside Libraries / 但忽略 Libraries 内的构建产物
+Libraries/**/.build/
+Libraries/**/DerivedData/
+Libraries/**/.DS_Store
