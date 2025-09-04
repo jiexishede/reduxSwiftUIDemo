@@ -406,6 +406,10 @@ struct ModernRefreshableScrollView: View {
                 LazyVStack(spacing: 0) {
                     itemsList
                     loadMoreSection
+                        .onAppear {
+                            // 当加载更多区域出现时自动触发加载 / Auto trigger load when load more section appears
+                            handleAutoLoadMore()
+                        }
                 }
             }
         }
@@ -437,11 +441,22 @@ struct ModernRefreshableScrollView: View {
             if case let .loaded(data, loadMoreState) = viewStore.pageState {
                 LoadMoreView(
                     loadMoreState: loadMoreState,
-                    hasMore: data.hasMorePages
+                    hasMore: data.hasMorePages,
+                    autoLoadMore: true  // 启用自动加载更多 / Enable auto load more
                 ) {
                     viewStore.send(.loadMore)
                 }
             }
+        }
+    }
+    
+    // 处理自动加载更多 / Handle auto load more
+    private func handleAutoLoadMore() {
+        if case let .loaded(data, loadMoreState) = viewStore.pageState,
+           data.hasMorePages,
+           case .idle = loadMoreState {
+            // 自动触发加载更多 / Auto trigger load more
+            viewStore.send(.loadMore)
         }
     }
 }
@@ -477,12 +492,19 @@ struct LegacyRefreshableScrollView: View {
             if case let .loaded(data, loadMoreState) = viewStore.pageState {
                 LoadMoreView(
                     loadMoreState: loadMoreState,
-                    hasMore: data.hasMorePages
+                    hasMore: data.hasMorePages,
+                    autoLoadMore: true  // 启用自动加载更多 / Enable auto load more
                 ) {
                     viewStore.send(.loadMore)
                 }
                 .listRowInsets(EdgeInsets())
                 .listRowSeparator(.hidden)
+                .onAppear {
+                    // 当加载更多视图出现时自动触发加载 / Auto trigger when load more view appears
+                    if data.hasMorePages && loadMoreState == .idle {
+                        viewStore.send(.loadMore)
+                    }
+                }
             }
         }
         .listStyle(PlainListStyle())
@@ -806,6 +828,7 @@ struct ListItemView: View {
 struct LoadMoreView: View {
     let loadMoreState: ReduxPageState<ListData<MockItem>>.LoadMoreState
     let hasMore: Bool
+    var autoLoadMore: Bool = false  // 是否自动加载更多 / Whether to auto load more
     let onLoadMore: () -> Void
     
     var body: some View {
@@ -822,7 +845,13 @@ struct LoadMoreView: View {
         switch loadMoreState {
         case .idle:
             if hasMore {
-                loadMoreButton
+                if autoLoadMore {
+                    // 自动加载模式：显示提示文字 / Auto load mode: show hint text
+                    autoLoadingHint
+                } else {
+                    // 手动加载模式：显示按钮 / Manual load mode: show button
+                    loadMoreButton
+                }
             }
             
         case .loading:
@@ -834,6 +863,12 @@ struct LoadMoreView: View {
         case let .failed(errorInfo):
             failedView(errorInfo: errorInfo)
         }
+    }
+    
+    private var autoLoadingHint: some View {
+        Text("上拉加载更多 / Pull up to load more")
+            .font(.caption)
+            .foregroundColor(.secondary)
     }
     
     private var loadMoreButton: some View {
