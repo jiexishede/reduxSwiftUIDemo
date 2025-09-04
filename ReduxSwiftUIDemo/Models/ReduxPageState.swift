@@ -168,13 +168,3 @@ enum ReduxPageState<Content: Equatable>: Equatable {
         errorInfo?.description
     }
 }
-
-// MARK: - List Content Protocol
-// 列表内容协议 / List Content Protocol
-protocol ListContentProtocol: Equatable {
-    associatedtype Item: Identifiable & Equatable
-    /// 列表项数组 / List items array
-    var items: [Item] { get }
-    /// 是否为空 / Is empty
-    var isEmpty: Bool { get }
-}
